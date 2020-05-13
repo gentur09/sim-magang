@@ -142,7 +142,7 @@ class Mahasiswa extends CI_Controller
                 ];
             } else {
                 $foto_profile = [
-                    'foto' => 'user-default.png'
+                    'foto' => 'user-default-student.png'
                 ];
             }
 
@@ -251,7 +251,7 @@ class Mahasiswa extends CI_Controller
                 $foto = ['upload_data' => $this->upload->data()];
 
                 // jika gambar berhasil diupload maka file gambar lama akan dihapus pada folder penyimpanan file gambar terkecuali file `default.png` tidak akan terhapus karena merupakan gambar bawaan semua user yang berhasil terdaftar
-                if ($foto_lama != 'user-default.png') {
+                if ($foto_lama != 'user-default-student.png') {
                     unlink(FCPATH . 'assets/image/profile/' . $foto_lama);
                 }
 

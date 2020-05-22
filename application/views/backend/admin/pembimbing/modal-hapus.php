@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal_hapus" tabindex="-1" role="dialog" aria-labelledby="modal_hapus" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header border-bottom-0">
                 <button class="btn btn-light btn-circle border-0" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><i class="far fa-times"></i></span>
                 </button>
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer border-top-0">
                     <button type="button" class="btn btn-link text-danger text-decoration-none" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-danger">Ya, Hapus</button>
                 </div>

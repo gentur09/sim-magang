@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal_ubah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-light border-bottom-0">
                 <h5 class="modal-title my-auto" id="exampleModalLabel">Edit Pembimbing</h5>
                 <button class="btn btn-light btn-circle border-0" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><i class="far fa-times"></i></span>
@@ -44,7 +44,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link text-danger text-decoration-none" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-warning" id="button_ubah">Update</button>
                 </div>
             </form>

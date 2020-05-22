@@ -77,7 +77,7 @@
     <li class="nav-item">
         <a class="nav-link" href="" data-toggle="modal" data-target="#logout_modal">
             <i class="fad fa-fw fa-sign-out"></i>
-            <span id="sidebar-text">Logout</span></a>
+            <span id="sidebar-text">Sign Out</span></a>
     </li>
 
     <!-- Divider -->

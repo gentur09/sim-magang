@@ -26,7 +26,7 @@
                             <th class="border-bottom border-right">Semester</th>
                             <th class="border-bottom border-right">Email</th>
                             <th class="border-bottom border-right">Alamat</th>
-                            <th class="border-bottom border-right">Action</th>
+                            <th class="border-bottom">Action</th>
                         </tr>
                     </thead>
                     <tbody>

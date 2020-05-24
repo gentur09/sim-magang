@@ -23,7 +23,7 @@
                         <tr class="border-bottom">
                             <th class="border-bottom border-right">#</th>
                             <th class="border-bottom border-right">Nama</th>
-                            <th class="border-bottom border-right">Action</th>
+                            <th class="border-bottom">Action</th>
                         </tr>
                     </thead>
                     <tbody>

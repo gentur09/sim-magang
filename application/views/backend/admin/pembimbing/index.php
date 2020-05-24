@@ -8,7 +8,7 @@
             <span class="icon text-white-50">
                 <i class="far fa-plus"></i>
             </span>
-            <span class="text">Tambah Data Baru</span>
+            <span class="text">Tambah Data</span>
         </button>
     </div>
 
@@ -18,12 +18,12 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="table_pembimbing" width="100%" cellspacing="0">
-                    <thead>
+                <table class="table table-borderless border" id="table_pembimbing" width="100%" cellspacing="0">
+                    <thead class="bg-light">
                         <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>Action</th>
+                            <th class="border-bottom border-right">#</th>
+                            <th class="border-bottom border-right">Nama</th>
+                            <th class="border-bottom border-right">Action</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -21,10 +21,10 @@
                 <table class="table table-borderless border" id="table_universitas" width="100%" cellspacing="0">
                     <thead class="bg-light">
                         <tr>
-                            <th class="border-bottom border-right">#</th>
-                            <th class="border-bottom border-right">Universitas</th>
-                            <th class="border-bottom border-right">Alamat</th>
-                            <th class="border-bottom border-right">Detail Alamat</th>
+                            <th class="border-bottom">#</th>
+                            <th class="border-bottom">Universitas</th>
+                            <th class="border-bottom">Alamat</th>
+                            <th class="border-bottom">Detail Alamat</th>
                             <th class="border-bottom">Action</th>
                         </tr>
                     </thead>

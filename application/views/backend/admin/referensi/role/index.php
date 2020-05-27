@@ -21,8 +21,8 @@
                 <table class="table table-borderless border" id="table_role" width="100%" cellspacing="0">
                     <thead class="bg-light">
                         <tr>
-                            <th class="border-bottom border-right">#</th>
-                            <th class="border-bottom border-right">Nama</th>
+                            <th class="border-bottom">#</th>
+                            <th class="border-bottom">Nama</th>
                             <th class="border-bottom">Action</th>
                         </tr>
                     </thead>

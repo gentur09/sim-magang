@@ -198,16 +198,24 @@
                 "type": "POST"
             },
             "columnDefs": [{
-                    "className": "text-center",
+                    "className": "text-center border-left",
                     "orderable": false,
                     "width": "15%",
                     "targets": -1
                 },
                 {
-                    "className": "text-center",
+                    "className": "text-center border-right",
                     "orderable": false,
                     "width": "7%",
                     "targets": 0
+                },
+                {
+                    "className": "border-right",
+                    "targets": 1,
+                },
+                {
+                    "className": "border-right",
+                    "targets": 2,
                 }
             ]
         });

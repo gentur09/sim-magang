@@ -31,6 +31,14 @@
                 <div class="col-sm-9">
     				<input type="text" class="form-control" id="nama_ubah" name="nama" autocomplete="off">
                         <p id="nama_ubah_error"></p>
+
+             <div class="form-group row">
+                <label class="col-sm-3  control-label text-right">no telp <span class="text-danger">*</span>
+                </label>
+                <div class="col-sm-9">
+    				<input type="text" class="form-control" id="nama_ubah" name="nama" autocomplete="off">
+                        <p id="nama_ubah_error"></p>
+
 			</div>
             </div>
 

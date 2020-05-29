@@ -6,7 +6,7 @@
         <h1 class="h3 mb-0 text-gray-800">Kinerja</h1>
         <a href="#" class="btn btn-primary btn-icon-split">
             <span class="icon text-white-50">
-                <i class="fad fa-plus"></i>
+                <i class="far fa-plus"></i>
             </span>
             <span class="text">Tambah Data</span>
         </a>

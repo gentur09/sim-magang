@@ -5,7 +5,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; SIM Magang <?= date("Y"); ?></span>
+            <span>&copy; <?= date("Y"); ?>, SIM Magang</span>
         </div>
     </div>
 </footer>

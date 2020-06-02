@@ -10,7 +10,9 @@
     <div class="card shadow mb-4">
 
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Selamat datang ...</h6>
+            <a href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Selamat Datang
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['nama']; ?></span>
+                    </a>
         </div>
         <div class="form-group" hidden>
                 <label for="id_ubah">ID</label>
@@ -19,7 +21,7 @@
         <div class="col-md-8">
             <div class="form-group">
                 <div class="col-md-4 pr-0">
-                    <img src="" id="foto_profile" class="img-fluid">
+                   <img src="" id="foto_profile" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-6 pr-0">

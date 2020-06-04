@@ -13,6 +13,8 @@ function is_logged_in()
             redirect('backend/admin/dashboard');
         } elseif ($ci->session->userdata('id_role') == $mahasiswa['id']) {
             redirect('backend/mahasiswa/profile');
+        } elseif ($ci->session->userdata('id_role') == $pembimbing['id']) {
+            redirect('backend/pembimbing/dashboard');
         }
     }
 }
@@ -35,6 +37,17 @@ function check_login_mahasiswa()
     $mahasiswa = $ci->db->get_where('ref_role', ['nama' => 'Mahasiswa'])->row_array();
 
     if ($ci->session->userdata('id_role') != $mahasiswa['id']) {
+        redirect('login');
+    }
+}
+
+function check_login_pembimbing()
+{
+    $ci = get_instance();
+
+    $pembimbing = $ci->db->get_where('ref_role', ['nama' => 'Pembimbing'])->row_array();
+
+    if ($ci->session->userdata('id_role') != $pembimbing['id']) {
         redirect('login');
     }
 }

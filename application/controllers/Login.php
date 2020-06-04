@@ -54,6 +54,8 @@ class Login extends CI_Controller
                             redirect('backend/admin/dashboard');
                         } elseif ($user['id_role'] == 2) {
                             redirect('backend/mahasiswa/profile');
+                        } elseif ($user['id_role'] == 3) {
+                            redirect('backend/pembimbing/dashboard');
                         } else {
                             redirect('login');
                         }

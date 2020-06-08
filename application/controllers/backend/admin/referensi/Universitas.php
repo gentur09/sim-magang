@@ -40,8 +40,8 @@ class Universitas extends CI_Controller
             $row[] = $field->nama_kecamatan . ", " . $field->nama_kabupaten . ", " . $field->nama_provinsi;
             $row[] = $field->alamat;
             $row[] = ' 
-                <a href="javascript:;" title="Edit" class="btn btn-light text-warning mb-1 border-0 tombol-ubah" data="' . $field->id_universitas . '"><i class="fad fa-edit"></i></a>
-                <a href="javascript:;" title="Hapus" class="btn btn-light text-danger mb-1 border-0 tombol-hapus" data="' . $field->id_universitas . '"><i class="fad fa-trash-alt"></i></a>
+                <a href="javascript:;" title="Edit" class="btn btn-light text-warning mb-1 border-0 tombol-ubah" data="' . $field->id_universitas . '"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" title="Hapus" class="btn btn-light text-danger mb-1 border-0 tombol-hapus" data="' . $field->id_universitas . '"><i class="far fa-trash-alt"></i></a>
                 ';
             $data[] = $row;
         }

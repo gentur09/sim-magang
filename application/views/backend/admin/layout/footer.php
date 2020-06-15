@@ -32,11 +32,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h4>Apakah anda yakin?</h4>
+                <h4>Are you sure want to log out?</h4>
             </div>
-            <div class="modal-footer border-top-0">
+            <div class="modal-footer border-top-0 pt-0">
                 <button type="button" class="btn btn-link text-danger text-decoration-none" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?= base_url('login/logout'); ?>">Sign Out</a>
+                <a class="btn btn-primary" href="<?= base_url('login/logout'); ?>">OK</a>
             </div>
         </div>
     </div>

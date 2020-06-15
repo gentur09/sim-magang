@@ -483,7 +483,6 @@
             async: false,
             success: function(data) {
                 tampilData();
-
                 $('#modal_hapus').modal('hide');
                 $('#hapus_id').val('');
                 toastr.success('Data mahasiswa berhasil dihapus', 'Berhasil', {
@@ -492,7 +491,7 @@
                     timeOut: 3000,
                     fadeOut: 3000
                 });
-            },
+            }
         });
     });
 </script>

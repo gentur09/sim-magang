@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('backend/admin/dashboard'); ?>">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('backend/mahasiswa/profile'); ?>">
         <div class="sidebar-brand-icon">
             <!-- <i class="fad fa-chart-network"></i> -->
             <img src="<?= base_url('assets/') ?>image/Icon/degree.png" alt="Brand">
@@ -14,13 +14,13 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('backend/admin/pembimbing'); ?>">
+        <a class="nav-link" href="<?= base_url('backend/mahasiswa/profile'); ?>">
             <i class="fad fa-fw fa-chalkboard-teacher"></i>
             <span id="sidebar-text">Profile</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('backend/admin/kinerja') ?>">
+        <a class="nav-link" href="<?= base_url('backend/mahasiswa/kinerja') ?>">
             <i class="fad fa-fw fa-clipboard-list-check"></i>
             <span id="sidebar-text">Kinerja Mahasiswa</span></a>
     </li>

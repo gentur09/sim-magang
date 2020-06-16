@@ -38,19 +38,19 @@
             <div class="form-group row">
                 <label for="nama_ubah" class="col-sm-3 control-label text-right">Nama Mahasiswa <span class="text-danger">*</span>
                 </label>
-                <div class="col-sm-9">
-    				<input type="text" class="form-control" id="nama_ubah" name="nama" autocomplete="off">
-                        <p id="nama_ubah_error"></p>
-			     </div>
+                    <div class="col-sm-9">
+    				    <input type="text" class="form-control" id="nama_ubah" name="nama" autocomplete="off">
+                            <p id="nama_ubah_error"></p>
+			        </div>
             </div>
 
             <div class="form-group row">
                 <label for="universitas_ubah" class="col-sm-3  control-label text-right">Universitas <span class="text-danger">*</span>
                 </label>
-                <div class="col-sm-9">
-    				<input type="text" class="form-control" id="universitas_ubah" name="universitas" autocomplete="off" readonly>
-                        <p id="universitas_ubah_error"></p>
-                </div>
+                    <div class="col-sm-9">
+                            <input type="text" class="form-control" id="universitas_ubah" name="universitas" autocomplete="off" readonly>
+                                <p id="universitas_ubah_error"></p>
+                    </div>
              </div>
             <div class="form-group row">
                             <label for="semester_ubah" class="col-sm-3 control-label text-right">Semester</label>
@@ -85,11 +85,8 @@
              <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="button_ubah">Update</button>
              </div>
-
-
-
     </div>
 </div>
-</form>
+    </form></div>
 
 <!-- /.container-fluid -->

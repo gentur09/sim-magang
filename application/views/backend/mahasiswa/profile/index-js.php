@@ -106,7 +106,7 @@
             "serverSide": true,
             "order": [],
             "ajax": {
-                "url": "<?= base_url('backend/admin/mahasiswa/getDataMahasiswa') ?>",
+                "url": "<?= base_url('backend/mahasiswa/profile/getDataMahasiswa') ?>",
                 "type": "POST"
             },
             "columnDefs": [{
@@ -138,7 +138,7 @@
     };
 
     $.ajax({
-        url: '<?= base_url('backend/admin/mahasiswa/select_universitas') ?>',
+        url: '<?= base_url('backend/mahasiswa/profile/select_universitas') ?>',
         type: 'POST',
         dataType: 'JSON',
         success: function(data) {
@@ -156,7 +156,7 @@
     });
 
     $.ajax({
-        url: '<?= base_url('backend/admin/mahasiswa/select_provinsi') ?>',
+        url: '<?= base_url('backend/mahasiswa/profile/select_provinsi') ?>',
         type: 'POST',
         dataType: 'JSON',
         success: function(data) {
@@ -176,7 +176,7 @@
         var provinsi = $(this).val();
 
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/select_kabupaten') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/select_kabupaten') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -199,7 +199,7 @@
         var provinsi = $(this).val();
 
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/select_kabupaten') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/select_kabupaten') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -223,7 +223,7 @@
         var kabupaten = $(this).val();
 
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/select_kecamatan') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/select_kecamatan') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -246,7 +246,7 @@
         var kabupaten = $(this).val();
 
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/select_kecamatan') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/select_kecamatan') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -273,7 +273,7 @@
     $('#form_tambah').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/aksiTambah') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/aksiTambah') ?>',
             type: 'POST',
             data: new FormData(this),
             dataType: 'JSON',
@@ -355,7 +355,7 @@
         });
 
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/aksiDetail') ?>',
+            url: '<?= base_url('backend/mahsasiwa/profile/aksiDetail') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -394,7 +394,7 @@
     $('#form_ubah').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "<?php echo base_url('backend/admin/mahasiswa/aksiUbah') ?>",
+            url: "<?php echo base_url('backend/mahsiswa/profile/aksiUbah') ?>",
             type: 'POST',
             data: new FormData(this),
             processData: false,
@@ -459,7 +459,7 @@
         var id = $(this).attr('data');
         $('#modal_hapus').modal('show');
         $.ajax({
-            url: '<?= base_url('backend/admin/mahasiswa/aksiDetail') ?>',
+            url: '<?= base_url('backend/mahasiswa/profile/aksiDetail') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -474,7 +474,7 @@
     $('#form_hapus').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "<?= base_url('backend/admin/mahasiswa/aksiHapus') ?>",
+            url: "<?= base_url('backend/mahasiswa/profile/aksiHapus') ?>",
             type: "POST",
             data: new FormData(this),
             processData: false,

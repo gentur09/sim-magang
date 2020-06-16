@@ -26,7 +26,7 @@ class Profile extends CI_Controller
 
     public function getDataMahasiswa()
     {
-        $records = $this->MahasiswaModel->get_datatables();
+        $records = $this->ProfileModel->get_datatables();
         $data = [];
         $no = $_POST['start'];
 
@@ -47,8 +47,8 @@ class Profile extends CI_Controller
 
         $output = [
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->MahasiswaModel->count_all(),
-            "recordsFiltered" => $this->MahasiswaModel->count_filtered(),
+            "recordsTotal" => $this->ProfileModel->count_all(),
+            "recordsFiltered" => $this->ProfileModel->count_filtered(),
             "data" => $data
         ];
 
@@ -60,13 +60,13 @@ class Profile extends CI_Controller
         $where = array(
             'id' => $this->input->post('id')
         );
-        $data = $this->MahasiswaModel->detail($where, 'mahasiswa');
+        $data = $this->ProfileModel->detail($where, 'mahasiswa');
 
         $where_user = array(
             'id' => $data['id_user']
         );
 
-        $data += $this->MahasiswaModel->detail($where_user, 'user');
+        $data += $this->ProfileModel->detail($where_user, 'user');
 
         echo json_encode($data);
     }
@@ -109,7 +109,7 @@ class Profile extends CI_Controller
         ));
 
         // mendapatkan role id dari mahasiswa
-        $role = $this->MahasiswaModel->detail(['nama' => 'Mahasiswa'], 'ref_role');
+        $role = $this->ProfileModel->detail(['nama' => 'Mahasiswa'], 'ref_role');
 
         if ($this->form_validation->run() != false) {
             $config['allowed_types'] = 'gif|jpg|png';
@@ -127,7 +127,7 @@ class Profile extends CI_Controller
                 'dibuat_pada' => date("Y-m-d H:i:s")
             ];
 
-            $this->MahasiswaModel->tambah($data_user, 'user');
+            $this->ProfileModel->tambah($data_user, 'user');
             $id_user = $this->db->insert_id();
 
             // Jika memilih sebuah file foto
@@ -161,7 +161,7 @@ class Profile extends CI_Controller
             ];
 
             $data += $foto_profile;
-            $this->MahasiswaModel->tambah($data, 'mahasiswa');
+            $this->ProfileModel->tambah($data, 'mahasiswa');
             // End insert mahasiswa
 
             $id = $this->db->insert_id();
@@ -219,7 +219,7 @@ class Profile extends CI_Controller
                 'id' => $this->input->post('id')
             );
 
-            $mahasiswa = $this->MahasiswaModel->detail(['id' => $where_mahasiswa['id']], 'mahasiswa');
+            $mahasiswa = $this->ProfileModel->detail(['id' => $where_mahasiswa['id']], 'mahasiswa');
 
             $where_user = array(
                 'id' => $mahasiswa['id_user']
@@ -230,7 +230,7 @@ class Profile extends CI_Controller
                 'diubah_pada' => date('Y-m-d H:i:s')
             );
 
-            $this->MahasiswaModel->ubah($data_user, $where_user, 'user');
+            $this->ProfileModel->ubah($data_user, $where_user, 'user');
 
             // Jika memilih sebuah file foto
             $this->load->library('upload', $config);
@@ -263,7 +263,7 @@ class Profile extends CI_Controller
 
             $data_mahasiswa += $foto_profile;
 
-            $proses = $this->MahasiswaModel->ubah($data_mahasiswa, $where_mahasiswa, 'mahasiswa');
+            $proses = $this->ProfileModel->ubah($data_mahasiswa, $where_mahasiswa, 'mahasiswa');
 
             echo json_encode(array('status' => true, 'data' => $proses));
         } else {

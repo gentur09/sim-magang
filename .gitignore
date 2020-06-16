@@ -2,6 +2,7 @@
 *.png
 *.jpeg
 *.jpg
+*.pdf
 
 application/cache/*
 !application/cache/index.html

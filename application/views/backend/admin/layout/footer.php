@@ -5,7 +5,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; SIM Magang <?= date("Y"); ?></span>
+            <span>&copy; <?= date("Y"); ?>, SIM Magang</span>
         </div>
     </div>
 </footer>
@@ -23,7 +23,6 @@
 </a>
 
 <!-- Logout Modal-->
-<!-- Logout Modal-->
 <div class="modal fade" id="logout_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -33,11 +32,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h4>Apakah anda yakin?</h4>
+                <h4>Are you sure want to log out?</h4>
             </div>
-            <div class="modal-footer border-top-0">
+            <div class="modal-footer border-top-0 pt-0">
                 <button type="button" class="btn btn-link text-danger text-decoration-none" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?= base_url('login/logout'); ?>">Sign Out</a>
+                <a class="btn btn-primary" href="<?= base_url('login/logout'); ?>">OK</a>
             </div>
         </div>
     </div>

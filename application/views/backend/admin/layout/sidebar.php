@@ -41,9 +41,17 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('backend/admin/kinerja') ?>">
-            <i class="fad fa-fw fa-clipboard-list-check"></i>
-            <span id="sidebar-text">Kinerja Mahasiswa</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fad fa-fw fa-code-branch"></i>
+            <span>Magang</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Components:</h6>
+                <a class="collapse-item" href="<?= base_url('backend/admin/kinerja') ?>">Kinerja Mahasiswa</a>
+                <a class="collapse-item" href="<?= base_url('backend/admin/project') ?>">Project</a>
+            </div>
+        </div>
     </li>
 
     <!-- Divider -->
@@ -61,15 +69,15 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('backend/admin/referensi/role'); ?>">
-            <i class="fad fa-fw fa-user-hard-hat"></i>
-            <span id="sidebar-text">Role</span></a>
-    </li>
-
-    <li class="nav-item">
         <a class="nav-link" href="<?= base_url('backend/admin/referensi/jabatan'); ?>">
             <i class="fad fa-fw fa-sitemap"></i>
             <span id="sidebar-text">Jabatan</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('backend/admin/referensi/role'); ?>">
+            <i class="fad fa-fw fa-user-hard-hat"></i>
+            <span id="sidebar-text">Role</span></a>
     </li>
 
     <hr class="sidebar-divider mb-0">
@@ -77,7 +85,7 @@
     <li class="nav-item">
         <a class="nav-link" href="" data-toggle="modal" data-target="#logout_modal">
             <i class="fad fa-fw fa-sign-out"></i>
-            <span id="sidebar-text">Sign Out</span></a>
+            <span id="sidebar-text">Logout</span></a>
     </li>
 
     <!-- Divider -->

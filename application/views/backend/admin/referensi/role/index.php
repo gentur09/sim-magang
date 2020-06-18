@@ -4,11 +4,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Role</h1>
-        <button class="btn btn-primary btn-icon-split" id="tombol_tambah">
-            <span class="icon text-white-50">
-                <i class="far fa-plus"></i>
-            </span>
-            <span class="text">Tambah Data</span>
+        <button class="btn btn-light btn-circle border-0 text-primary" title="Tambah Role" id="tombol_tambah">
+            <i class="far fa-plus rotate"></i>
         </button>
     </div>
 

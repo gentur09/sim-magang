@@ -84,6 +84,9 @@
                 ]
             }
         })
+        .then(editor => {
+            window.editor_add = editor;
+        })
         .catch(error => {
             console.log(error);
         });
@@ -119,7 +122,7 @@
             }
         })
         .then(editor => {
-            window.editor = editor;
+            window.editor_ubah = editor;
         })
         .catch(error => {
             console.log(error);
@@ -195,6 +198,10 @@
         $('#modal_tambah').modal('show');
     });
 
+    $("#tombol_tambah").click(function() {
+        $(".rotate").toggleClass("down");
+    });
+
     $('#form_tambah').submit(function(e) {
         e.preventDefault();
         $.ajax({
@@ -226,7 +233,7 @@
                     $('#waktu_selesai').val('');
                     $('.input-daterange').datepicker('clearDates');
                     $('#repositori').val('');
-                    $('#deskripsi').val('');
+                    window.editor_add.setData('');
                     $('#file_laporan').val('');
                     $('#file_label').html('Pilih File');
 
@@ -286,7 +293,7 @@
                     $('#waktu_mulai_ubah').val(data.waktu_mulai);
                     $('#waktu_selesai_ubah').val(data.waktu_selesai);
                     // $('#deskripsi_ubah').val(data.deskripsi);
-                    window.editor.setData(data.deskripsi);
+                    window.editor_ubah.setData(data.deskripsi);
                     $('#repositori_ubah').val(data.repositori);
                     ubah_dosbing = data.id_pembimbing;
                 })

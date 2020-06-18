@@ -87,6 +87,7 @@
              </div>
     </div>
 </div>
-    </form></div>
+    </form>
+</div>
 
 <!-- /.container-fluid -->

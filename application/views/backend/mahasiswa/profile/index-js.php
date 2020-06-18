@@ -355,7 +355,7 @@
         });
 
         $.ajax({
-            url: '<?= base_url('backend/mahsasiwa/profile/aksiDetail') ?>',
+            url: '<?= base_url('backend/mahasiwa/profile/aksiDetail') ?>',
             type: 'POST',
             dataType: 'JSON',
             data: {
@@ -394,7 +394,7 @@
     $('#form_ubah').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "<?php echo base_url('backend/mahsiswa/profile/aksiUbah') ?>",
+            url: "<?php echo base_url('backend/mahasiswa/profile/aksiUbah') ?>",
             type: 'POST',
             data: new FormData(this),
             processData: false,

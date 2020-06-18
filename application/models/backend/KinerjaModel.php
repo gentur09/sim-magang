@@ -108,4 +108,29 @@ class KinerjaModel extends CI_Model
         $this->db->where($where);
         return $this->db->delete($table);
     }
+
+    public function detailKinerja($id = '')
+    {
+        $this->db->select('
+            kinerja.id as id_kinerja,
+            kinerja.judul as kinerja,
+            kinerja.keterangan,
+            kinerja.id_mahasiswa,
+            kinerja.tanggal,
+            kinerja.id_projek_magang,
+            projek_magang.id_pembimbing,
+            pembimbing.nama as nama_pembimbing,
+            mahasiswa.nama as nama_mahasiswa,
+            projek_magang.judul as projek
+        ');
+        $this->db->from($this->table);
+        $this->db->join('mahasiswa', 'mahasiswa.id = kinerja.id_mahasiswa', 'LEFT');
+        $this->db->join('projek_magang', 'projek_magang.id = kinerja.id_projek_magang', 'LEFT');
+        $this->db->join('pembimbing', 'pembimbing.id = projek_magang.id_pembimbing', 'LEFT');
+        $this->db->where('kinerja.aktif', '1');
+        $this->db->where('kinerja.dihapus_pada is NULL');
+        $this->db->where('kinerja.id_mahasiswa', $id);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }

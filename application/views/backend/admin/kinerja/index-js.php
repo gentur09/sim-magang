@@ -193,6 +193,12 @@
         return false;
     });
 
+    $(document).on('click', '.tombol-cetak', function() {
+        var id_mahasiswa = $(this).attr('data');
+        window.open("<?= base_url('backend/admin/cetakKinerja/kinerjaMahasiswa/'); ?>" + id_mahasiswa, "_blank");
+        return false;
+    });
+
     $(document).on('click', '#detail_kinerja', function() {
         var id = $(this).attr('data');
         $('#modal_detail_kinerja').modal('show');

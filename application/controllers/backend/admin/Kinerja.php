@@ -38,6 +38,7 @@ class Kinerja extends CI_Controller
             $row[] = $field->nama;
             $row[] = ' 
                 <a href="javascript:;" title="Detail Kinerja" class="btn btn-light text-info mb-1 border-0 tombol-detail" data="' . $field->id_mahasiswa . '"><i class="far fa-clipboard-check"></i></a>
+                <a href="javascript:;" title="Cetak Kinerja" class="btn btn-light text-danger mb-1 border-0 tombol-cetak" data="' . $field->id_mahasiswa . '"><i class="fal fa-file-pdf"></i></a>
                 ';
             $data[] = $row;
         }

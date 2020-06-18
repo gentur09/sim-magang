@@ -27,7 +27,7 @@ class Kinerja extends CI_Controller
 
     public function getDataMahasiswa()
     {
-        $records = $this->MahasiswaModel->get_datatables();
+        $records = $this->KinerjaModel->get_datatables();
         $data = [];
         $no = $_POST['start'];
 
@@ -44,8 +44,8 @@ class Kinerja extends CI_Controller
 
         $output = [
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->MahasiswaModel->count_all(),
-            "recordsFiltered" => $this->MahasiswaModel->count_filtered(),
+            "recordsTotal" => $this->KinerjaModel->count_all(),
+            "recordsFiltered" => $this->KinerjaModel->count_filtered(),
             "data" => $data
         ];
 

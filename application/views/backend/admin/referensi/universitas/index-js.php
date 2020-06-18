@@ -226,6 +226,10 @@
         $('#modal_tambah').modal('show');
     });
 
+    $("#tombol_tambah").click(function() {
+        $(".rotate").toggleClass("down");
+    })
+
     // proses tambah
     $('#form_tambah').submit(function(e) {
         e.preventDefault();

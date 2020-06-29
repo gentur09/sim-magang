@@ -4,8 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class KinerjaModel extends CI_Model
 {
     var $table = 'kinerja';
-    var $column_order = array('id', 'mahasiswa.nama');
-    var $column_search = array('id', 'mahasiswa.nama');
+    var $column_order = array('mahasiswa.id', 'mahasiswa.nama');
+    var $column_search = array('mahasiswa.id', 'mahasiswa.nama');
     var $order = array('mahasiswa.id' => 'DESC');
 
     private function _get_datatables_query()
@@ -80,7 +80,7 @@ class KinerjaModel extends CI_Model
 
     public function count_all()
     {
-        $this->db->from($this->table);
+        $this->db->from('mahasiswa');
         $this->db->where('aktif', '1');
         $this->db->where('dihapus_pada is NULL');
         return $this->db->count_all_results();

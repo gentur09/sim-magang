@@ -140,6 +140,16 @@ class Kinerja extends CI_Controller
                 'id' => $this->input->post('id')
             ];
 
+            if ($this->input->post('verifikasi') != null) {
+                $tanggal_ver = [
+                    'tanggal_verifikasi' => date('Y-m-d H:i:s')
+                ];
+            } else {
+                $tanggal_ver = [
+                    'tanggal_verifikasi' => null
+                ];
+            }
+
             $data = [
                 'id_projek_magang' => $this->input->post('projek'),
                 'judul' => $this->input->post('judul'),
@@ -148,6 +158,8 @@ class Kinerja extends CI_Controller
                 'aktif' => '1',
                 'diubah_pada' => date("Y-m-d H:i:s")
             ];
+
+            $data += $tanggal_ver;
 
             $proses = $this->KinerjaModel->ubah($data, $where, 'kinerja');
             echo json_encode(array('status' => true, 'data' => $proses));

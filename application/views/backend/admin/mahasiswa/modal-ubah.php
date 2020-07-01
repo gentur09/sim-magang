@@ -92,6 +92,11 @@
                         <select id="kecamatan_ubah" data-width="100%" class="form-control" name="kecamatan"></select>
                         <p id="kecamatan_ubah_error"></p>
                     </div>
+                    <div class="form-group">
+                        <label for="kelurahan_ubah">Kelurahan</label>
+                        <select id="kelurahan_ubah" data-width="100%" class="form-control" name="kelurahan"></select>
+                        <p id="kelurahan_ubah_error"></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-warning" id="button_ubah">Update</button>

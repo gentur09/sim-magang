@@ -28,6 +28,7 @@
 <script>
     var ubah_kabupaten;
     var ubah_kecamatan;
+    var ubah_kelurahan;
     $(document).ready(function() {
         var table;
         tampilData();
@@ -62,6 +63,10 @@
         placeholder: "Daftar kecamatan (Pilih kabupaten terlebih dahulu!)",
         allowClear: true
     });
+    $('#kelurahan').select2({
+        placeholder: "Daftar kelurahan (Pilih kecamatan terlebih dahulu!)",
+        allowClear: true
+    });
 
     $('#provinsi_ubah').select2({
         placeholder: "Daftar provinsi",
@@ -73,6 +78,10 @@
     });
     $('#kecamatan_ubah').select2({
         placeholder: "Daftar kecamatan (Pilih kabupaten terlebih dahulu!)",
+        allowClear: true
+    });
+    $('#kelurahan_ubah').select2({
+        placeholder: "Daftar kelurahan (Pilih kecamatan terlebih dahulu!)",
         allowClear: true
     });
 
@@ -187,6 +196,53 @@
         });
     });
 
+    $('#kecamatan').change(function() {
+        var kecamatan = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('backend/admin/referensi/universitas/select_kelurahan') ?>',
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                kecamatan: kecamatan
+            },
+            success: function(data) {
+                var html = "<option></option>";
+
+                for (var i = 0; i < data.length; i++) {
+                    var selected = '';
+                    html += "<option value='" + data[i].kode_wilayah + "'>" + data[i].nama + "</option>";
+                }
+
+                $('#kelurahan').html(html);
+            }
+        });
+    });
+
+    $('#kecamatan_ubah').change(function() {
+        var kecamatan = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('backend/admin/referensi/universitas/select_kelurahan') ?>',
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                kecamatan: kecamatan
+            },
+            success: function(data) {
+                var html = "<option></option>";
+
+                for (var i = 0; i < data.length; i++) {
+                    var selected = '';
+                    html += "<option value='" + data[i].kode_wilayah + "'>" + data[i].nama + "</option>";
+                }
+
+                $('#kelurahan_ubah').html(html);
+                $('#kelurahan_ubah').val(ubah_kelurahan).trigger('change');
+            }
+        });
+    });
+
     function tampilData() {
         table = $('#table_universitas').DataTable({
             "destroy": true,
@@ -212,10 +268,6 @@
                 {
                     "className": "border-right",
                     "targets": 1,
-                },
-                {
-                    "className": "border-right",
-                    "targets": 2,
                 }
             ]
         });
@@ -261,11 +313,13 @@
                     $('#provinsi').val(null).trigger('change');
                     $('#kabupaten').val(null).trigger('change');
                     $('#kecamatan').val(null).trigger('change');
+                    $('#kelurahan').val(null).trigger('change');
                     $('#nama_error').html('');
                     $('#alamat_error').html('');
                     $('#provinsi_error').html('');
                     $('#kabupaten_error').html('');
                     $('#kecamatan_error').html('');
+                    $('#kelurahan_error').html('');
                     $('#button_tambah').text("Simpan");
 
                 } else {
@@ -281,6 +335,7 @@
                     $('#provinsi_error').html(data.provinsi);
                     $('#kabupaten_error').html(data.kabupaten);
                     $('#kecamatan_error').html(data.kecamatan);
+                    $('#kelurahan_error').html(data.kelurahan);
                     $('#button_tambah').text("Simpan");
                 }
             }
@@ -319,8 +374,10 @@
                         $('#provinsi_ubah').val(data.provinsi).trigger('change');
                         $('#kabupaten_ubah').val(data.kabupaten).trigger('change');
                         $('#kecamatan_ubah').val(data.kecamatan).trigger('change');
+                        $('#kelurahan_ubah').val(data.kelurahan).trigger('change');
                         ubah_kabupaten = data.kabupaten;
                         ubah_kecamatan = data.kecamatan;
+                        ubah_kelurahan = data.kelurahan;
                     }
                 })
             }
@@ -351,6 +408,7 @@
                     $('#provinsi_ubah').val(null).trigger('change');
                     $('#kabupaten_ubah').val(null).trigger('change');
                     $('#kecamatan_ubah').val(null).trigger('change');
+                    $('#kelurahan_ubah').val(null).trigger('change');
                     toastr.success('Data universitas berhasil diubah', 'Berhasil', {
                         showEasing: "swing",
                         positionClass: "toast-top-right",
@@ -362,6 +420,7 @@
                     $('#provinsi_ubah_error').html('');
                     $('#kabupaten_ubah_error').html('');
                     $('#kecamatan_ubah_error').html('');
+                    $('#kelurahan_ubah_error').html('');
                     $('#button_ubah').text("Update");
                 } else {
                     toastr.error('Periksa kembali data universitas yang anda diubah', 'Gagal', {
@@ -376,6 +435,7 @@
                     $('#provinsi_ubah_error').html(data.provinsi);
                     $('#kabupaten_ubah_error').html(data.kabupaten);
                     $('#kecamatan_ubah_error').html(data.kecamatan);
+                    $('#kelurahan_ubah_error').html(data.kelurahan);
                     $('#button_ubah').text("Update");
                 }
             }

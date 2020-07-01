@@ -17,14 +17,17 @@ class UniversitasModel extends CI_Model
             ref_universitas.provinsi, 
             ref_universitas.kabupaten, 
             ref_universitas.kecamatan, 
+            ref_universitas.kelurahan, 
             provinsi.nama as nama_provinsi,
             kabupaten.nama as nama_kabupaten,
-            kecamatan.nama as nama_kecamatan
+            kecamatan.nama as nama_kecamatan,
+            kelurahan.nama as nama_kelurahan
         ');
         $this->db->from($this->table);
         $this->db->join('provinsi', 'provinsi.kode_wilayah = ref_universitas.provinsi', 'LEFT');
         $this->db->join('kabupaten', 'kabupaten.kode_wilayah = ref_universitas.kabupaten', 'LEFT');
         $this->db->join('kecamatan', 'kecamatan.kode_wilayah = ref_universitas.kecamatan', 'LEFT');
+        $this->db->join('kelurahan', 'kelurahan.kode_wilayah = ref_universitas.kelurahan', 'LEFT');
         $this->db->where('ref_universitas.aktif', '1');
         $this->db->where('ref_universitas.dihapus_pada is NULL');
 
@@ -82,12 +85,14 @@ class UniversitasModel extends CI_Model
             ref_universitas.kecamatan, 
             provinsi.nama as nama_provinsi,
             kabupaten.nama as nama_kabupaten,
-            kecamatan.nama as nama_kecamatan
+            kecamatan.nama as nama_kecamatan,
+            kelurahan.nama as nama_kelurahan
         ');
         $this->db->from($this->table);
         $this->db->join('provinsi', 'provinsi.kode_wilayah = ref_universitas.provinsi', 'LEFT');
         $this->db->join('kabupaten', 'kabupaten.kode_wilayah = ref_universitas.kabupaten', 'LEFT');
         $this->db->join('kecamatan', 'kecamatan.kode_wilayah = ref_universitas.kecamatan', 'LEFT');
+        $this->db->join('kelurahan', 'kelurahan.kode_wilayah = ref_universitas.kelurahan', 'LEFT');
         $this->db->where('ref_universitas.aktif', '1');
         $this->db->where('ref_universitas.dihapus_pada is NULL');
         return $this->db->count_all_results();

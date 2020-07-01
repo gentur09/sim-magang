@@ -37,8 +37,7 @@ class Universitas extends CI_Controller
             $row = [];
             $row[] = $no;
             $row[] = $field->nama;
-            $row[] = $field->nama_kecamatan . ", " . $field->nama_kabupaten . ", " . $field->nama_provinsi;
-            $row[] = $field->alamat;
+            $row[] = $field->alamat . ", " . $field->nama_kelurahan . ", " . $field->nama_kecamatan . ", " . $field->nama_kabupaten . ", " . $field->nama_provinsi;
             $row[] = ' 
                 <a href="javascript:;" title="Edit" class="btn btn-light text-warning mb-1 border-0 tombol-ubah" data="' . $field->id_universitas . '"><i class="far fa-edit"></i></a>
                 <a href="javascript:;" title="Hapus" class="btn btn-light text-danger mb-1 border-0 tombol-hapus" data="' . $field->id_universitas . '"><i class="far fa-trash-alt"></i></a>
@@ -74,6 +73,7 @@ class Universitas extends CI_Controller
         $this->form_validation->set_rules('provinsi', 'Provinsi tidak boleh kosong', 'required');
         $this->form_validation->set_rules('kabupaten', 'Kabupaten tidak boleh kosong', 'required');
         $this->form_validation->set_rules('kecamatan', 'Kecamatan tidak boleh kosong', 'required');
+        $this->form_validation->set_rules('kelurahan', 'Kelurahan tidak boleh kosong', 'required');
         $this->form_validation->set_message('required', 'Anda melewatkan input, {field}!');
 
         if ($this->form_validation->run() != false) {
@@ -83,6 +83,7 @@ class Universitas extends CI_Controller
                 'provinsi' => $this->input->post('provinsi'),
                 'kabupaten' => $this->input->post('kabupaten'),
                 'kecamatan' => $this->input->post('kecamatan'),
+                'kelurahan' => $this->input->post('kelurahan'),
                 'aktif' => '1',
                 'dibuat_pada' => date("Y-m-d H:i:s")
             ];
@@ -99,7 +100,8 @@ class Universitas extends CI_Controller
                 'alamat' => form_error('alamat', '<p class="form-text text-danger">', '</p>'),
                 'provinsi' => form_error('provinsi', '<p class="form-text text-danger">', '</p>'),
                 'kabupaten' => form_error('kabupaten', '<p class="form-text text-danger">', '</p>'),
-                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>')
+                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>'),
+                'kelurahan' => form_error('kelurahan', '<p class="form-text text-danger">', '</p>')
             ];
             $this->output->set_content_type('application/json')->set_output(json_encode($json));
         }
@@ -113,6 +115,7 @@ class Universitas extends CI_Controller
         $this->form_validation->set_rules('provinsi', 'Provinsi tidak boleh kosong', 'required');
         $this->form_validation->set_rules('kabupaten', 'Kabupaten tidak boleh kosong', 'required');
         $this->form_validation->set_rules('kecamatan', 'Kecamatan tidak boleh kosong', 'required');
+        $this->form_validation->set_rules('kelurahan', 'Kelurahan tidak boleh kosong', 'required');
         $this->form_validation->set_message('required', 'Anda melewatkan input, {field}!');
 
         if ($this->form_validation->run() != false) {
@@ -126,6 +129,7 @@ class Universitas extends CI_Controller
                 'provinsi' => $this->input->post('provinsi'),
                 'kabupaten' => $this->input->post('kabupaten'),
                 'kecamatan' => $this->input->post('kecamatan'),
+                'kelurahan' => $this->input->post('kelurahan'),
                 'aktif' => '1',
                 'diubah_pada' => date("Y-m-d H:i:s")
             ];
@@ -139,7 +143,8 @@ class Universitas extends CI_Controller
                 'alamat' => form_error('alamat', '<p class="form-text text-danger">', '</p>'),
                 'provinsi' => form_error('provinsi', '<p class="form-text text-danger">', '</p>'),
                 'kabupaten' => form_error('kabupaten', '<p class="form-text text-danger">', '</p>'),
-                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>')
+                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>'),
+                'kelurahan' => form_error('kelurahan', '<p class="form-text text-danger">', '</p>')
             ];
             $this->output->set_content_type('application/json')->set_output(json_encode($json));
         }
@@ -184,6 +189,16 @@ class Universitas extends CI_Controller
             'kode_kab' => $kabupaten,
         );
         $data = $this->db->get_where('kecamatan', $where)->result_array();
+        echo json_encode($data);
+    }
+
+    public function select_kelurahan()
+    {
+        $kecamatan = $this->input->post('kecamatan');
+        $where = array(
+            'kode_kec' => $kecamatan,
+        );
+        $data = $this->db->get_where('kelurahan', $where)->result_array();
         echo json_encode($data);
     }
 }

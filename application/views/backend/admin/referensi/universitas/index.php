@@ -21,7 +21,6 @@
                             <th class="border-bottom">#</th>
                             <th class="border-bottom">Universitas</th>
                             <th class="border-bottom">Alamat</th>
-                            <th class="border-bottom">Detail Alamat</th>
                             <th class="border-bottom">Action</th>
                         </tr>
                     </thead>

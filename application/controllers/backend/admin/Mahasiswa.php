@@ -110,6 +110,9 @@ class Mahasiswa extends CI_Controller
         $this->form_validation->set_rules('kecamatan', 'kecamatan', 'required', array(
             'required' => 'Pilih kecamatan alamat asal!'
         ));
+        $this->form_validation->set_rules('kelurahan', 'kelurahan', 'required', array(
+            'required' => 'Pilih kelurahan alamat asal!'
+        ));
 
         // mendapatkan role id dari mahasiswa
         $role = $this->MahasiswaModel->detail(['nama' => 'Mahasiswa'], 'ref_role');
@@ -158,6 +161,7 @@ class Mahasiswa extends CI_Controller
                 'id_provinsi' => $this->input->post('provinsi'),
                 'id_kabupaten' => $this->input->post('kabupaten'),
                 'id_kecamatan' => $this->input->post('kecamatan'),
+                'id_kelurahan' => $this->input->post('kelurahan'),
                 'id_user' => $id_user,
                 'aktif' => '1',
                 'dibuat_pada' => date("Y-m-d H:i:s")
@@ -182,7 +186,8 @@ class Mahasiswa extends CI_Controller
                 'alamat' => form_error('alamat', '<p class="form-text text-danger">', '</p>'),
                 'provinsi' => form_error('provinsi', '<p class="form-text text-danger">', '</p>'),
                 'kabupaten' => form_error('kabupaten', '<p class="form-text text-danger">', '</p>'),
-                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>')
+                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>'),
+                'kelurahan' => form_error('kelurahan', '<p class="form-text text-danger">', '</p>')
             ];
             $this->output->set_content_type('application/json')->set_output(json_encode($json));
         }
@@ -218,6 +223,9 @@ class Mahasiswa extends CI_Controller
         ));
         $this->form_validation->set_rules('kecamatan', 'kecamatan', 'required', array(
             'required' => 'Pilih kecamatan alamat asal!'
+        ));
+        $this->form_validation->set_rules('kelurahan', 'kelurahan', 'required', array(
+            'required' => 'Pilih kelurahan alamat asal!'
         ));
 
         if ($this->form_validation->run() != false) {
@@ -274,6 +282,7 @@ class Mahasiswa extends CI_Controller
                 'id_provinsi' => $this->input->post('provinsi'),
                 'id_kabupaten' => $this->input->post('kabupaten'),
                 'id_kecamatan' => $this->input->post('kecamatan'),
+                'id_kelurahan' => $this->input->post('kelurahan'),
                 'diubah_pada' => date('Y-m-d H:i:s')
             );
 
@@ -293,7 +302,8 @@ class Mahasiswa extends CI_Controller
                 'alamat' => form_error('alamat', '<p class="form-text text-danger">', '</p>'),
                 'provinsi' => form_error('provinsi', '<p class="form-text text-danger">', '</p>'),
                 'kabupaten' => form_error('kabupaten', '<p class="form-text text-danger">', '</p>'),
-                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>')
+                'kecamatan' => form_error('kecamatan', '<p class="form-text text-danger">', '</p>'),
+                'kelurahan' => form_error('kelurahan', '<p class="form-text text-danger">', '</p>')
             ];
             $this->output->set_content_type('application/json')->set_output(json_encode($json));
         }
@@ -352,6 +362,16 @@ class Mahasiswa extends CI_Controller
             'kode_kab' => $kabupaten,
         );
         $data = $this->db->get_where('kecamatan', $where)->result_array();
+        echo json_encode($data);
+    }
+
+    public function select_kelurahan()
+    {
+        $kecamatan = $this->input->post('kecamatan');
+        $where = array(
+            'kode_kec' => $kecamatan,
+        );
+        $data = $this->db->get_where('kelurahan', $where)->result_array();
         echo json_encode($data);
     }
 }

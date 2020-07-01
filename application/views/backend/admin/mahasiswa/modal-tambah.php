@@ -92,6 +92,11 @@
                         <select id="kecamatan" data-width="100%" class="form-control" name="kecamatan"></select>
                         <p id="kecamatan_error"></p>
                     </div>
+                    <div class="form-group">
+                        <label for="kelurahan">Kelurahan</label>
+                        <select id="kelurahan" data-width="100%" class="form-control" name="kelurahan"></select>
+                        <p id="kelurahan_error"></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="button_tambah">Simpan</button>
